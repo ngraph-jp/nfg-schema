@@ -148,9 +148,50 @@ footer a{color:#f3efe6}
   .loopback{margin:16px 0 0;border:none;height:auto;text-align:center}.loopback span{position:static;transform:none;background:none;padding:0}.loopback span::before{content:"↺ "}
   .trust .row{grid-template-columns:1fr;gap:4px}
   .layers{grid-template-columns:1fr}
-  .dev dl{grid-template-columns:1fr;gap:6px}.dev dd{margin-bottom:14px}
+  .dev dl{grid-template-columns:minmax(0,1fr);gap:6px}.dev dd{margin-bottom:14px}
   .dev li{grid-template-columns:1fr;gap:2px}
 }
+/* ONTOLOGY:CSS:START */
+.on-card{margin-top:36px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.on-card svg{display:block;width:100%;height:auto}
+.on-fig{position:relative}.on-fig img{display:block;width:100%;height:auto}
+.on-hl{position:absolute;white-space:nowrap;font-size:clamp(.6875rem,1.25vw,.9375rem);font-weight:700;color:var(--ink);background:rgba(255,255,255,.88);padding:1px 6px;border-radius:4px;line-height:1.5}
+.on-hl small{display:block;font-size:.75em;font-weight:700;color:var(--accent)}
+.on-hl.on-hot,.on-hl.on-hot small{color:var(--hot-ink)}.on-hl.on-theory,.on-hl.on-theory small{color:var(--t3)}
+.on-legend{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;font-size:.875rem;color:var(--t2)}
+.on-legend i{display:inline-block;width:30px;vertical-align:middle;margin-right:8px;border-top:2px solid var(--accent)}
+.on-legend i.d{border-top:2px dashed var(--t3)}.on-legend i.h{border-top:4px solid var(--hot)}
+.on-tags{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px;font-size:.8125rem;color:var(--t2)}
+.on-tags b{display:inline-block;font-size:.75rem;padding:0 9px;border-radius:10px;margin-right:6px;border:1.2px solid var(--accent);color:var(--accent)}
+.on-tags b.o{background:var(--accent);color:#fff}.on-tags b.g{border-color:var(--t3);color:var(--t3)}.on-tags b.gd{border:1.2px dashed var(--t3);color:var(--t3)}.on-tags b.h{border-color:var(--hot-ink);color:var(--hot-ink)}
+.on-small{margin-top:12px;font-size:.8125rem;color:var(--t3)}.on-small a{color:var(--t3)}
+.on-h3{font-size:clamp(1.375rem,2.6vw,1.875rem);line-height:1.5;margin-top:72px}
+.on-pts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.on-pts div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
+.on-pts b{display:block;font-size:1.125rem}.on-pts p{margin-top:8px;color:var(--t2);font-size:.9375rem}
+.on-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:40px}
+.on-two>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
+.on-two h3{font-size:1.25rem;line-height:1.6}.on-two .k2{font-size:.8125rem;letter-spacing:.12em;color:var(--hot-ink);font-weight:700}
+.on-two p.d{margin-top:10px;color:var(--t2);font-size:.9375rem}
+.on-radar{max-width:300px;margin:16px auto 0}
+.on-bubble{background:var(--bg);border-radius:14px;padding:18px 20px;font-size:1rem;line-height:1.9;margin-top:8px}
+.on-bubble small{display:block;font-size:.75rem;color:var(--t3);margin-bottom:4px;font-weight:700;letter-spacing:.06em}
+.on-rules{margin-top:14px;font-size:.875rem;color:var(--t2)}.on-rules li{margin-left:1.2em}
+.on-chain{list-style:none;margin-top:18px}
+.on-chain li{display:flex;align-items:baseline;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.on-chain li span{flex:0 0 7em;font-size:.75rem;color:var(--t3);font-weight:700;letter-spacing:.06em}
+.on-chain li b{font-size:1rem}.on-chain li em{font-style:normal;font-size:.8125rem;color:var(--accent);font-weight:700;margin-left:auto}
+.on-ex{width:100%;border-collapse:collapse;margin-top:20px;font-size:.875rem}
+.on-ex th{text-align:left;font-size:.75rem;color:var(--t3);padding:6px 8px;border-bottom:1px solid var(--ink)}
+.on-ex td{padding:8px;border-bottom:1px solid var(--line)}.on-ex td:first-child{font-weight:700;width:6.5em}
+.on-scroll{display:none;font-size:.75rem;color:var(--t3);margin-top:8px}
+@media(max-width:760px){
+  .on-pts,.on-two{grid-template-columns:1fr}
+  .on-card{padding:12px}.on-wide{overflow-x:auto}.on-wide .on-fig{min-width:640px}.on-wide svg{min-width:820px}
+  .on-scroll{display:block}
+  .on-chain li{flex-wrap:wrap;gap:2px 12px}.on-chain li span{flex-basis:100%}.on-chain li em{margin-left:0}
+}
+/* ONTOLOGY:CSS:END */
 </style>
 </head>
 <body>
@@ -192,6 +233,188 @@ footer a{color:#f3efe6}
   <div class="layers"><div><b>構造</b><p>材料・調理法・アレルゲン・食事の制約（5か国の表示規制）</p></div><div><b>物語</b><p>味わい・食べ方・合う飲み物・料理の背景</p></div></div>
   <p class="note"><strong>機械が読む構造と、人が読む物語。</strong>　どちらも同じように出どころと確かさを持ちます。片方だけでは、料理を説明したことになりません。</p>
 </div></section>
+
+<!-- ONTOLOGY:START -->
+<section id="ontology"><div class="wrap">
+  <h2><span class="nb">1つの料理は、</span><span class="nb">意味の糸で</span><span class="nb">世界とつながっている。</span></h2>
+  <p class="sub">カツオのたたき1皿には、材料、作り方、生まれた土地、歴史、国ごとの決まりが結びついています。NFG は、この結びつきそのものをデータにします（オントロジー＝ものの種類と、そのつながり方の決まり）。糸をたどれば、AIは推測せずに答えられます。</p>
+  <div class="on-card"><div class="on-wide"><div class="on-fig"><img src="/img/onto-katsuo.webp" alt="カツオのたたきの皿から、材料・作り方・土地・歴史・国の決まりへ糸が伸びている絵" width="1376" height="768" loading="lazy">
+<span class="on-hl " style="left:43.60%;top:11.46%;transform:translate(-100%,-50%)">カツオ</span>
+<span class="on-hl " style="left:61.63%;top:9.11%;transform:translate(-50%,-100%)">にんにく</span>
+<span class="on-hl " style="left:71.58%;top:23.18%;transform:translate(0,-50%)">ねぎ</span>
+<span class="on-hl " style="left:75.22%;top:34.11%;transform:translate(0,-50%)">柚子酢</span>
+<span class="on-hl on-hot" style="left:75.94%;top:50.13%;transform:translate(0,-50%)">醤油</span>
+<span class="on-hl on-hot" style="left:74.85%;top:68.75%;transform:translate(0,-50%)">小麦<small>日本では表示義務</small></span>
+<span class="on-hl " style="left:67.59%;top:84.64%;transform:translate(0,-50%)">漁師のまかない<small>公式</small></span>
+<span class="on-hl " style="left:38.15%;top:91.15%;transform:translate(-50%,0)">炙る（藁焼き）</span>
+<span class="on-hl " style="left:23.11%;top:70.31%;transform:translate(-100%,-50%)">皿鉢料理の定番<small>公式</small></span>
+<span class="on-hl " style="left:25.58%;top:31.25%;transform:translate(-100%,-50%)">国ごとの表示の決まり</span>
+<span class="on-hl on-theory" style="left:35.03%;top:16.93%;transform:translate(-100%,-50%)">藩主が生食を禁じた説<small>諸説</small></span>
+  </div></div>
+  <p class="on-scroll">← 横にずらして見られます →</p>
+  <div class="on-legend"><span><i></i>確かめたつながり</span><span><i class="h"></i>たどる道：醤油 → 小麦</span><span><i class="d"></i>説（言い切らない）</span></div>
+  </div>
+
+  <h3 class="on-h3"><span class="nb">同じ1皿を、</span><span class="nb">NFG の型で書くと。</span></h3>
+  <div class="on-card"><div class="on-wide">
+<svg viewBox="0 0 1200 650" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="カツオのたたきをNFGのオントロジーで表した図">
+<defs>
+<marker id="on-aa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#24427a"/></marker>
+<marker id="on-ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#646d78"/></marker>
+<marker id="on-ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c8a24a"/></marker>
+<style>.on-cls{font:700 13px var(--g);fill:#646d78;letter-spacing:.06em}.on-ttl{font:700 20px var(--g)}.on-main{font:700 30px var(--m)}.on-sub{font:400 15px var(--g);fill:#46505c}.on-elab{font:700 14px var(--g)}.on-badge{font:700 12px var(--g)}</style>
+</defs>
+<path d="M330,85.0 H400" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/><text x="365" y="77" class="on-elab" text-anchor="middle" fill="#646d78">郷土料理</text>
+<path d="M720,85.0 H750" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M440.0,135 V160 H46 V567" fill="none" stroke="#24427a" stroke-width="1.8"/>
+<path d="M46,231 H70" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M46,343 H70" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M46,455 H70" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M46,567 H70" fill="none" stroke="#646d78" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#on-ad)"/>
+<text x="52" y="152" class="on-elab" text-anchor="start" fill="#646d78">物語（人が読む層）</text>
+<path d="M620.0,135 V160 H655.0" fill="none" stroke="#24427a" stroke-width="1.8"/>
+<path d="M655.0,160 V185" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M860.0,160 V185" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M620.0,160 H1065.0" fill="none" stroke="#c8a24a" stroke-width="4"/><path d="M620.0,135 V160" fill="none" stroke="#c8a24a" stroke-width="4"/>
+<path d="M1065.0,160 V185" fill="none" stroke="#c8a24a" stroke-width="4" marker-end="url(#on-ah)"/>
+<text x="868.0" y="152" class="on-elab" text-anchor="start" fill="#646d78">材料</text>
+<path d="M655.0,265 V305" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/><text x="663.0" y="290.0" class="on-elab" text-anchor="start" fill="#646d78">旬</text>
+<path d="M1065.0,265 V305" fill="none" stroke="#c8a24a" stroke-width="4" marker-end="url(#on-ah)"/><text x="1073.0" y="290.0" class="on-elab" text-anchor="start" fill="#8a6a1e">含む</text>
+<path d="M750,225.0 H759 V465 H750" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/><text x="754" y="400" class="on-elab" text-anchor="end" fill="#646d78">分類</text>
+<path d="M1065.0,385 V405 H860.0 V425" fill="none" stroke="#c8a24a" stroke-width="4" marker-end="url(#on-ah)"/><text x="868.0" y="399" class="on-elab" text-anchor="start" fill="#8a6a1e">導く</text>
+<path d="M1065.0,385 V425" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<path d="M655.0,505 V545" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/><text x="663.0" y="530.0" class="on-elab" text-anchor="start" fill="#646d78">表示</text>
+<path d="M860.0,505 V545" fill="none" stroke="#c8a24a" stroke-width="4" marker-end="url(#on-ah)"/><text x="868.0" y="530.0" class="on-elab" text-anchor="start" fill="#8a6a1e">表示</text>
+<path d="M1065.0,505 V545" fill="none" stroke="#24427a" stroke-width="1.8" marker-end="url(#on-aa)"/>
+<rect x="40" y="45" width="290" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="54" y="67" class="on-cls">地域（Region）</text>
+<rect x="282" y="53" width="40" height="20" rx="10" fill="#fff" stroke="#24427a" stroke-width="1.2"/><text x="302.0" y="67" class="on-badge" text-anchor="middle" fill="#24427a">公式</text>
+<text x="54" y="93" class="on-ttl" fill="#16202c">高知県</text>
+<text x="54" y="115" class="on-sub">県の魚がカツオ</text>
+<rect x="400" y="35" width="320" height="100" rx="10" fill="#fbf6ea" stroke="#c8a24a" stroke-width="2.5"/>
+<text x="414" y="57" class="on-cls">郷土料理（LocalDish）</text>
+<text x="414" y="103.0" class="on-main" fill="#24427a">カツオのたたき</text>
+<rect x="750" y="45" width="200" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="764" y="67" class="on-cls">調理法</text>
+<text x="764" y="93" class="on-ttl" fill="#16202c">炙る</text>
+<text x="764" y="115" class="on-sub">藁か、ガスかは店による</text>
+<rect x="965" y="45" width="195" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="979" y="67" class="on-cls">言葉（多言語）</text>
+<text x="979" y="93" class="on-ttl" fill="#16202c">Seared bonito</text>
+<text x="979" y="115" class="on-sub">beaten ではない</text>
+<rect x="70" y="185" width="450" height="92" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="84" y="207" class="on-cls">由来</text>
+<rect x="472" y="193" width="40" height="20" rx="10" fill="#fff" stroke="#24427a" stroke-width="1.2"/><text x="492.0" y="207" class="on-badge" text-anchor="middle" fill="#24427a">公式</text>
+<text x="84" y="233" class="on-ttl" fill="#16202c">漁師が船の上で食べた、まかない</text>
+<text x="84" y="255" class="on-sub">それが一般に広まったとされる</text>
+<rect x="70" y="297" width="450" height="92" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="84" y="319" class="on-cls">知恵</text>
+<rect x="472" y="305" width="40" height="20" rx="10" fill="#fff" stroke="#24427a" stroke-width="1.2"/><text x="492.0" y="319" class="on-badge" text-anchor="middle" fill="#24427a">公式</text>
+<text x="84" y="345" class="on-ttl" fill="#16202c">保存技術のない時代の工夫</text>
+<text x="84" y="367" class="on-sub">鮮度の落ちたカツオを食べるため。火を通すので保存も効く</text>
+<rect x="70" y="409" width="450" height="92" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="84" y="431" class="on-cls">行事</text>
+<rect x="472" y="417" width="40" height="20" rx="10" fill="#fff" stroke="#24427a" stroke-width="1.2"/><text x="492.0" y="431" class="on-badge" text-anchor="middle" fill="#24427a">公式</text>
+<text x="84" y="457" class="on-ttl" fill="#16202c">皿鉢料理（さわちりょうり）の定番</text>
+<text x="84" y="479" class="on-sub">冠婚葬祭や神事に欠かせない</text>
+<rect x="70" y="521" width="450" height="92" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4" stroke-dasharray="6 5"/>
+<text x="84" y="543" class="on-cls">由来（別の説）</text>
+<rect x="472" y="529" width="40" height="20" rx="10" fill="#fff" stroke="#646d78" stroke-width="1.2" stroke-dasharray="3 3"/><text x="492.0" y="543" class="on-badge" text-anchor="middle" fill="#646d78">諸説</text>
+<text x="84" y="569" class="on-ttl" fill="#16202c">藩主が生食を禁じたので、表面を焼いた</text>
+<text x="84" y="591" class="on-sub">出典を確かめられない。言うなら「説の一つ」</text>
+<rect x="560" y="185" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="574" y="207" class="on-cls">材料</text>
+<rect x="678" y="193" width="64" height="20" rx="10" fill="#24427a" stroke="#24427a" stroke-width="1.2"/><text x="710.0" y="207" class="on-badge" text-anchor="middle" fill="#fff">店主確認</text>
+<text x="574" y="233" class="on-ttl" fill="#16202c">カツオ</text>
+<text x="574" y="255" class="on-sub">Katsuwonus pelamis</text>
+<rect x="765" y="185" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="779" y="207" class="on-cls">材料（薬味）</text>
+<rect x="883" y="193" width="64" height="20" rx="10" fill="#24427a" stroke="#24427a" stroke-width="1.2"/><text x="915.0" y="207" class="on-badge" text-anchor="middle" fill="#fff">店主確認</text>
+<text x="779" y="233" class="on-ttl" fill="#16202c">にんにく・ねぎ</text>
+<text x="779" y="255" class="on-sub">土佐ではにんにく必須</text>
+<rect x="970" y="185" width="190" height="80" rx="10" fill="#fbf6ea" stroke="#c8a24a" stroke-width="2.5"/>
+<text x="984" y="207" class="on-cls">材料（タレ）</text>
+<rect x="1088" y="193" width="64" height="20" rx="10" fill="#24427a" stroke="#24427a" stroke-width="1.2"/><text x="1120.0" y="207" class="on-badge" text-anchor="middle" fill="#fff">店主確認</text>
+<text x="984" y="233" class="on-ttl" fill="#16202c">柚子酢＋醤油</text>
+<text x="984" y="255" class="on-sub">土佐の作り方</text>
+<rect x="560" y="305" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="574" y="327" class="on-cls">旬</text>
+<rect x="702" y="313" width="40" height="20" rx="10" fill="#fff" stroke="#24427a" stroke-width="1.2"/><text x="722.0" y="327" class="on-badge" text-anchor="middle" fill="#24427a">公式</text>
+<text x="574" y="353" class="on-ttl" fill="#16202c">秋の下りカツオ</text>
+<text x="574" y="375" class="on-sub">初夏の初カツオも</text>
+<rect x="970" y="305" width="190" height="80" rx="10" fill="#fbf6ea" stroke="#c8a24a" stroke-width="2.5"/>
+<text x="984" y="327" class="on-cls">材料</text>
+<rect x="1112" y="313" width="40" height="20" rx="10" fill="#fff" stroke="#646d78" stroke-width="1.2"/><text x="1132.0" y="327" class="on-badge" text-anchor="middle" fill="#646d78">辞書</text>
+<text x="984" y="353" class="on-ttl" fill="#16202c">醤油</text>
+<text x="984" y="375" class="on-sub">印：小麦・大豆</text>
+<rect x="560" y="425" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="574" y="447" class="on-cls">アレルゲン</text>
+<rect x="666" y="433" width="76" height="20" rx="10" fill="#fff" stroke="#8a6a1e" stroke-width="1.2"/><text x="704.0" y="447" class="on-badge" text-anchor="middle" fill="#8a6a1e">自動で導く</text>
+<text x="574" y="473" class="on-ttl" fill="#16202c">魚</text>
+<text x="574" y="495" class="on-sub">日本の32品目に無い</text>
+<rect x="765" y="425" width="190" height="80" rx="10" fill="#fbf6ea" stroke="#c8a24a" stroke-width="2.5"/>
+<text x="779" y="447" class="on-cls">アレルゲン</text>
+<rect x="871" y="433" width="76" height="20" rx="10" fill="#fff" stroke="#8a6a1e" stroke-width="1.2"/><text x="909.0" y="447" class="on-badge" text-anchor="middle" fill="#8a6a1e">自動で導く</text>
+<text x="779" y="483.0" class="on-ttl" fill="#16202c">小麦</text>
+<rect x="970" y="425" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="984" y="447" class="on-cls">アレルゲン</text>
+<rect x="1076" y="433" width="76" height="20" rx="10" fill="#fff" stroke="#8a6a1e" stroke-width="1.2"/><text x="1114.0" y="447" class="on-badge" text-anchor="middle" fill="#8a6a1e">自動で導く</text>
+<text x="984" y="483.0" class="on-ttl" fill="#16202c">大豆</text>
+<rect x="560" y="545" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="574" y="567" class="on-cls">国の表示の決まり</text>
+<rect x="702" y="553" width="40" height="20" rx="10" fill="#fff" stroke="#646d78" stroke-width="1.2"/><text x="722.0" y="567" class="on-badge" text-anchor="middle" fill="#646d78">辞書</text>
+<text x="574" y="593" class="on-ttl" fill="#16202c">日本：対象外</text>
+<text x="574" y="615" class="on-sub">米・EU・加・豪：義務</text>
+<rect x="765" y="545" width="190" height="80" rx="10" fill="#fbf6ea" stroke="#c8a24a" stroke-width="2.5"/>
+<text x="779" y="567" class="on-cls">国の表示の決まり</text>
+<rect x="907" y="553" width="40" height="20" rx="10" fill="#fff" stroke="#646d78" stroke-width="1.2"/><text x="927.0" y="567" class="on-badge" text-anchor="middle" fill="#646d78">辞書</text>
+<text x="779" y="593" class="on-ttl" fill="#16202c">日本：義務</text>
+<text x="779" y="615" class="on-sub">5か国すべて義務</text>
+<rect x="970" y="545" width="190" height="80" rx="10" fill="#fff" stroke="#c9cdd3" stroke-width="1.4"/>
+<text x="984" y="567" class="on-cls">国の表示の決まり</text>
+<rect x="1112" y="553" width="40" height="20" rx="10" fill="#fff" stroke="#646d78" stroke-width="1.2"/><text x="1132.0" y="567" class="on-badge" text-anchor="middle" fill="#646d78">辞書</text>
+<text x="984" y="593" class="on-ttl" fill="#16202c">日本：推奨</text>
+<text x="984" y="615" class="on-sub">他の4か国：義務</text>
+</svg>
+  </div>
+  <p class="on-scroll">← 横にずらして見られます →</p>
+  <div class="on-legend"><span><i></i>確かめたつながり</span><span><i class="d"></i>説・推定（言い切らない）</span><span><i class="h"></i>たどる道：タレ → 醤油 → 小麦 → 日本では表示義務</span></div>
+  <div class="on-tags"><span><b class="o">店主確認</b>店主が確かめた</span><span><b>公式</b>公的な公開情報（出典URLつき）</span><span><b class="h">自動で導く</b>材料の印から導いた</span><span><b class="g">辞書</b>NFG の辞書の値</span><span><b class="gd">諸説</b>出典を確かめられない</span></div>
+  <p class="on-small">※ 説明のための見本です。特定の店の料理ではありません。物語と旬は農林水産省「<a href="https://www.maff.go.jp/j/keikaku/syokubunka/k_ryouri/search_menu/menu/katuonotataki_kochi.html" rel="noopener">うちの郷土料理 かつおのたたき 高知県</a>」、アレルゲンと国の区分は NFG の辞書（32品目×日・米・EU・カナダ・豪）によります。</p>
+  </div>
+  <div class="on-pts">
+    <div><b>つながりから、答えが出る</b><p>醤油には「小麦・大豆」の印があります。タレ→醤油とたどれば、メニューに書いていなくても小麦が入っていると分かります。確かさが高いものだけ言い切り、低いものは店主に聞きます。</p></div>
+    <div><b>同じ1品でも、国で答えが変わる</b><p>カツオは日本の表示の対象ではありませんが、米国・EUなどでは「魚」として表示の義務があります。お客さまの国に合わせて伝え方を変えます。</p></div>
+    <div><b>物語にも、出どころがある</b><p>「漁師のまかない」は公式の情報として話せます。「藩主が生食を禁じた」は出典を確かめられないので、説の一つとして話します。AIが歴史を作り話にしません。</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2><span class="nb">つながりがあるから、</span><span class="nb">できること。</span></h2>
+  <div class="on-two">
+    <div>
+      <p class="k2">中庸 ─ どのくらい辛い？ 甘い？</p>
+      <h3>数字ではなく、ちょうどいい言葉で返す。</h3>
+      <p class="d">味を8つの軸で、それぞれ1〜10の数字で持ちます。お客さまに数字は見せず、AIが言葉に直して伝えます。</p>
+      <div class="on-radar"><svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="味の8つの軸">
+<style>.on-rl{font:700 18px var(--g);fill:#46505c}</style>
+<polygon points="200.0,140.0 221.2,148.8 230.0,170.0 221.2,191.2 200.0,200.0 178.8,191.2 170.0,170.0 178.8,148.8" fill="none" stroke="#c9cdd3" stroke-width="1"/><polygon points="200.0,110.0 242.4,127.6 260.0,170.0 242.4,212.4 200.0,230.0 157.6,212.4 140.0,170.0 157.6,127.6" fill="none" stroke="#c9cdd3" stroke-width="1"/><polygon points="200.0,80.0 263.6,106.4 290.0,170.0 263.6,233.6 200.0,260.0 136.4,233.6 110.0,170.0 136.4,106.4" fill="none" stroke="#c9cdd3" stroke-width="1"/><polygon points="200.0,50.0 284.9,85.1 320.0,170.0 284.9,254.9 200.0,290.0 115.1,254.9 80.0,170.0 115.1,85.1" fill="none" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="200.0" y2="50.0" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="284.9" y2="85.1" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="320.0" y2="170.0" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="284.9" y2="254.9" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="200.0" y2="290.0" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="115.1" y2="254.9" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="80.0" y2="170.0" stroke="#c9cdd3" stroke-width="1"/><line x1="200" y1="170" x2="115.1" y2="85.1" stroke="#c9cdd3" stroke-width="1"/><polygon points="200.0,74.0 242.4,127.6 260.0,170.0 217.0,187.0 200.0,206.0 140.6,229.4 152.0,170.0 183.0,153.0" fill="rgba(36,66,122,.12)" stroke="#24427a" stroke-width="2" stroke-dasharray="6 4"/><text x="200.0" y="29.0" text-anchor="middle" class="on-rl">旨味 8</text><text x="303.2" y="71.8" text-anchor="middle" class="on-rl">コク 5</text><text x="346.0" y="175.0" text-anchor="middle" class="on-rl">塩味 5</text><text x="303.2" y="278.2" text-anchor="middle" class="on-rl">甘味 2</text><text x="200.0" y="321.0" text-anchor="middle" class="on-rl">辛味 3</text><text x="96.8" y="278.2" text-anchor="middle" class="on-rl">さっぱり 7</text><text x="54.0" y="175.0" text-anchor="middle" class="on-rl">酸味 4</text><text x="96.8" y="71.8" text-anchor="middle" class="on-rl">苦味 2</text></svg></div>
+      <div class="on-bubble"><small>AIの答え（例）</small>旨味が豊かで、柚子酢でさっぱりしています。にんにくが効いていますが、辛さは控えめです。</div>
+      <ul class="on-rules"><li>「お好みの料理」を選ぶと、味の形が近い料理を「お好みに近い」として出します（何%近いかは見せません）</li><li>味の数字はAIの推定です。言い切らず、目安として伝えます</li></ul>
+      <p class="on-small">※ 味の数字は説明のための見本です。</p>
+    </div>
+    <div>
+      <p class="k2">おすすめ ─ つながりで探す</p>
+      <h3>その土地の料理と、出している店まで。</h3>
+      <p class="d">地域・郷土料理・店・メニューが、決まったつながりで結ばれています。「福井でおすすめは？」と聞かれたら、地域から郷土料理へ、郷土料理から出している店のメニューへ、とたどれます。</p>
+      <ul class="on-chain"><li><span>地域</span><b>福井県</b><em>郷土料理を持つ ↓</em></li><li><span>郷土料理</span><b>へしこ</b><em>↑ この料理の1つ</em></li><li><span>店のメニュー</span><b>へしこの炙り</b><em>↑ 出している</em></li><li><span>店</span><b>（福井の店）</b></li></ul>
+      <table class="on-ex"><thead><tr><th>地域</th><th>たどれる郷土料理の例</th></tr></thead>
+      <tbody><tr><td>福井県</td><td><span class="nb">へしこ</span>・<span class="nb">おろしそば</span>・<span class="nb">さばぬた</span></td></tr><tr><td>高知県</td><td><span class="nb">かつおのたたき</span>・<span class="nb">皿鉢料理</span></td></tr><tr><td>神奈川県</td><td><span class="nb">生しらす丼</span>・<span class="nb">小田原かまぼこ</span></td></tr><tr><td>千葉県</td><td><span class="nb">なめろう</span>・<span class="nb">さんが焼き</span></td></tr></tbody></table>
+      <p class="on-small">※ 店とメニューの名前は説明のための見本です。郷土料理の例は農林水産省「うちの郷土料理」の都道府県別の一覧から。</p>
+    </div>
+  </div>
+</div></section>
+<!-- ONTOLOGY:END -->
 
 <section><div class="wrap impl">
   <div>
