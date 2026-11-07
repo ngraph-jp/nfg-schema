@@ -152,39 +152,26 @@ footer a{color:#f3efe6}
   .dev li{grid-template-columns:1fr;gap:2px}
 }
 /* HITL:CSS:START */
-.hq{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr) 40px minmax(0,1fr);align-items:stretch;margin-top:44px}
-.hq-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.75rem;font-weight:700}
-.hq-p{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column}
-.hq-p .who{font-size:.8125rem;font-weight:700;letter-spacing:.08em;color:var(--t3)}
-.hq-p .cap{margin-top:auto;padding-top:16px;font-weight:700;font-size:1rem;line-height:1.6}
-.hq-rows{list-style:none;margin-top:12px}
-.hq-rows li{display:flex;justify-content:space-between;gap:10px;padding:8px 10px;border-radius:8px;font-size:.875rem;line-height:1.5}
-.hq-rows li+li{margin-top:4px}
-.hq-rows li span{color:var(--t2)}
-.hq-rows li b{font-weight:700;white-space:nowrap}
-.hq-rows li.ok b{color:var(--accent)}
-.hq-rows li.ask{background:#fbf6ea;outline:2px dashed var(--hot);outline-offset:-2px}
-.hq-rows li.ask b{color:var(--hot-ink)}
-.hq-phone{margin:12px auto 0;width:100%;max-width:250px;border:2px solid var(--ink);border-radius:26px;padding:16px 12px 18px;background:var(--bg)}
-.hq-phone .bar{width:56px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 12px}
-.hq-msg{background:#fff;border-radius:12px 12px 12px 4px;padding:10px 12px;font-size:.875rem;line-height:1.7}
-.hq-msg small{display:block;font-size:.6875rem;color:var(--t3);font-weight:700}
-.hq-btns{display:grid;gap:6px;margin-top:10px}
-.hq-btns span{display:block;text-align:center;border:1.5px solid var(--accent);border-radius:999px;padding:5px 8px;font-size:.8125rem;font-weight:700;color:var(--accent);background:#fff}
-.hq-btns span.on{background:var(--accent);color:#fff;position:relative}
-.hq-btns span.on::after{content:"✓ タップ";position:absolute;right:-6px;top:-12px;background:var(--hot);color:var(--ink);font-size:.625rem;border-radius:999px;padding:1px 6px}
-.hq-btns span.later{border-style:dashed;border-color:var(--t3);color:var(--t3)}
-.hq-chat{margin-top:12px;display:grid;gap:8px}
-.hq-chat .q{justify-self:end;background:var(--bg);border-radius:12px 12px 4px 12px;padding:8px 12px;font-size:.875rem;max-width:90%}
-.hq-chat .a{background:#fff;border:1.5px solid var(--accent);border-radius:12px 12px 12px 4px;padding:10px 12px;font-size:.875rem;line-height:1.7}
-.hq-chat .a em{display:inline-block;margin-top:6px;font-style:normal;font-size:.75rem;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:1px 10px}
-.hq-loop{margin:16px 8% 0;border:2px dashed var(--accent);border-top:none;height:26px;border-radius:0 0 12px 12px;position:relative}
-.hq-loop span{position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);background:var(--bg);padding:0 12px;font-size:.875rem;color:var(--accent);font-weight:700;white-space:nowrap}
-.hq-note{margin-top:28px;font-size:.8125rem;color:var(--t3)}
+.hq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center;margin-top:44px}
+.hq figure{text-align:center}
+.hq video{display:block;margin:0 auto;width:100%;max-width:300px;height:auto;border-radius:36px;box-shadow:0 30px 60px -30px rgba(20,15,10,.45)}
+.hq figcaption{margin-top:14px;font-size:.8125rem;color:var(--t3)}
+.hq-steps{list-style:none;counter-reset:q}
+.hq-steps li{position:relative;padding:0 0 26px 56px}
+.hq-steps li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid var(--accent);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center}
+.hq-steps li:not(:last-child)::after{content:"";position:absolute;left:19px;top:42px;bottom:4px;border-left:2px dashed var(--accent)}
+.hq-steps li.on::before{background:var(--accent);color:#fff}
+.hq-steps b{display:block;font-size:1.25rem;line-height:1.5}
+.hq-steps span{display:block;margin-top:4px;color:var(--t2);font-size:.9375rem}
+.hq-badges{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.hq-badges div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.hq-badges em{display:inline-block;font-style:normal;font-weight:700;font-size:.875rem;border-radius:999px;padding:2px 12px}
+.hq-badges em.ok{background:var(--accent);color:#fff}
+.hq-badges em.ai{border:1.5px dashed var(--t3);color:var(--t3)}
+.hq-badges small{display:block;margin-top:6px;font-size:.8125rem;color:var(--t2)}
 @media(max-width:760px){
-  .hq{grid-template-columns:1fr}
-  .hq-arrow{transform:rotate(90deg);height:36px}
-  .hq-loop{display:none}
+  .hq{grid-template-columns:1fr;gap:32px}
+  .hq-badges{grid-template-columns:1fr}
 }
 /* HITL:CSS:END */
 /* ONTOLOGY:CSS:START */
@@ -259,38 +246,21 @@ footer a{color:#f3efe6}
   <h2><span class="nb">AIが下書きし、</span><span class="nb">人が確かめる。</span></h2>
   <p class="sub">この仕組みを HITL（Human-in-the-loop）と呼びます。</p>
 <!-- HITL:START -->
-  <div class="hq" aria-label="AIが分からないところだけを店主に聞き、店主がタップで答え、確かめた答えをお客さまに返す流れ">
-    <div class="hq-p">
-      <p class="who">① AIの下書き</p>
-      <ul class="hq-rows">
-        <li class="ok"><span>料理</span><b>カツオのたたき</b></li>
-        <li class="ok"><span>材料</span><b>カツオ・にんにく・ねぎ</b></li>
-        <li class="ok"><span>タレ</span><b>柚子酢＋醤油</b></li>
-        <li class="ask"><span>タレに、みりん（アルコール）は？</span><b>分からない</b></li>
-      </ul>
-      <p class="cap">分からないところだけを、店主への質問にする。</p>
-    </div>
-    <div class="hq-arrow" aria-hidden="true">→</div>
-    <div class="hq-p">
-      <p class="who">② 店主のスマホ</p>
-      <div class="hq-phone"><div class="bar"></div>
-        <div class="hq-msg"><small>AIからの質問</small>「カツオのたたき」のタレに、みりんは入っていますか？</div>
-        <div class="hq-btns"><span>入っている</span><span class="on">入っていない</span><span class="later">あとで答える</span></div>
+  <div class="hq">
+    <figure><video autoplay muted loop playsinline preload="metadata" poster="/img/owner-ja-poster.webp" aria-label="AIが店主に料理の材料を質問し、店主がタップで答えて反映される、OMISEAI の店主側の画面" width="600" height="1264"><source src="/img/owner-ja.webm" type="video/webm"><source src="/img/owner-ja.mp4" type="video/mp4"></video>
+      <figcaption><span class="nb">OMISEAI の店主側の画面。</span><span class="nb">1問目は導入店舗に</span><span class="nb">実際に届いた質問です。</span></figcaption></figure>
+    <div>
+      <ol class="hq-steps">
+        <li class="on"><b>AIが、分からないところだけを聞く</b><span>メニューを読み取って整理し、自信のないところだけを店主に質問します。「小麦粉で揚げていますか？」「乳製品は使っていますか？」</span></li>
+        <li><b>店主は、タップで答える</b><span>選択肢から選ぶだけ。「その他」も選べます。</span></li>
+        <li><b>答えは、すぐ料理の情報に</b><span>「✓ 反映しました」。店主の答えが正解データ（VAD）になります。取り消しもできます。</span></li>
+      </ol>
+      <div class="hq-badges">
+        <div><em class="ok">✓ 店主確認済み</em><small>店主が答えた情報。AIは言い切れる</small></div>
+        <div><em class="ai">AI推定</em><small>まだ店主が確かめていない情報。「心配ならスタッフへ」と添える</small></div>
       </div>
-      <p class="cap">店主は、選ぶだけ。忙しければ、あとで。</p>
-    </div>
-    <div class="hq-arrow" aria-hidden="true">→</div>
-    <div class="hq-p">
-      <p class="who">③ お客さまへの答え</p>
-      <div class="hq-chat">
-        <div class="q">アルコールは入っていますか？</div>
-        <div class="a">このタレに、みりんは使っていません。<br><em>✓ 店主確認済み</em></div>
-      </div>
-      <p class="cap">確かめた答えだけを、言い切る。</p>
     </div>
   </div>
-  <div class="hq-loop"><span>店主の答えは、正解データ（VAD）として料理に残る</span></div>
-  <p class="hq-note">※ 説明のための見本です。AIは、確かさが一定より低いところだけを質問にします。</p>
 <!-- HITL:END -->
   <ol class="flow"><li><span class="n">01</span><b>AIが下書きする</b><small>メニューの写真や文章から、材料・調理法・アレルゲンを推定する</small></li><li><span class="n">02</span><b>店主が確かめる</b><small>違うところを直し、正しいものを承認する</small></li><li class="on"><span class="n">03</span><b>正解データになる</b><small>店主確認済み（owner_verified）・確かさ 0.95 以上</small></li><li><span class="n">04</span><b>AIが答える</b><small>確かめた情報だけで答え、「店舗確認済み」と示す</small></li></ol>
   <div class="loopback"><span>分からないことは、店主への質問として戻す</span></div>
