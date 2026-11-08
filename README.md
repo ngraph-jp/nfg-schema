@@ -42,4 +42,10 @@ NGraph の Cloudflare の Worker `nfg-schema`（静的アセット・nfg.ngraph.
 
 ## License
 
-TBD (likely CC BY 4.0 for the schema vocabulary, separate from the OMISEAI software).
+**NFG Core Schema and Metadata (Layer 1 & 2) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** © NGraph Inc. The JSON-LD contexts under `/schema/` and the specification pages at https://nfg.ngraph.jp/ are the licensed material. Full text: [LICENSE](./LICENSE). Layer 3 Service Extensions are proprietary to NGraph Inc. The OMISEAI software is separate and not covered by this license.
+
+Attribution example: `NFG (Nicomachos Food Graph) by NGraph Inc., https://nfg.ngraph.jp/ — CC BY 4.0`
+
+NFG の公開部分（Layer 1 Core Schema・Layer 2 Metadata＝`/schema/` の JSON-LD context と規格ページ）は **CC BY 4.0**（クリエイティブ・コモンズ 表示 4.0 国際）です（© 株式会社NGraph）。全文は [LICENSE](./LICENSE)。Layer 3（Service Extensions）は NGraph 独自（proprietary）で、OMISEAI のソフトウェアもこのライセンスの対象外です。
+
+出典表示の例：`NFG (Nicomachos Food Graph) by NGraph Inc., https://nfg.ngraph.jp/ — CC BY 4.0`（2026-11-08 確定）

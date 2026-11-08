@@ -4,6 +4,9 @@
   Cache-Control: public, max-age=3600, s-maxage=86400
   Content-Type: application/ld+json; charset=utf-8
 
+/LICENSE
+  Content-Type: text/plain; charset=utf-8
+
 /schema/v0.2/context.jsonld
   Access-Control-Allow-Origin: *
   Content-Type: application/ld+json; charset=utf-8
