@@ -184,6 +184,16 @@ footer a{color:#f3efe6}
   .dev li{break-inside:avoid;grid-template-columns:170px minmax(0,1fr)}
   .dev pre{max-height:380px}
 }
+
+/* 2026-11-08 本人「ここ実際の画面で見せられないのか？」：VAD の説明を、OMISEAI の実際の画面（店主確認済みの札）で見せる */
+.vad-real{margin:0;text-align:center}
+.vad-shot{position:relative;display:inline-block;max-width:420px;width:100%;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 48px -28px rgba(20,15,10,.45)}
+.vad-shot img{display:block;width:100%;height:auto}
+.vad-ring{position:absolute;left:77.5%;top:41.5%;width:16.5%;height:7.5%;border:3px solid var(--hot);border-radius:8px;box-shadow:0 0 0 4px rgba(200,162,74,.25)}
+.vad-tag{position:absolute;right:3%;top:52%;background:var(--accent);color:#fff;font-size:.8125rem;font-weight:700;line-height:1.4;padding:6px 10px;border-radius:6px;text-align:left}
+.vad-tag::before{content:"";position:absolute;right:22%;top:-7px;border:7px solid transparent;border-top:none;border-bottom-color:var(--accent)}
+.vad-real figcaption{margin-top:14px;font-size:.875rem;color:var(--t2);line-height:1.8}
+.vad-real figcaption b{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -202,7 +212,7 @@ footer a{color:#f3efe6}
     <p>AI fills in ingredients and allergens with plausible guesses.</p><p>In a restaurant, one wrong answer can hurt someone.</p>
     <p class="strong">NFG keeps owner-verified information as correct data (VAD), and AI answers only from that.</p>
   </div>
-  <div class="vad"><b>VAD</b><i>Verified Authentic Data</i><span>Correct data the owner has verified</span></div>
+  <figure class="vad-real"><div class="vad-shot"><img src="/img/vad-real.webp" alt="The customer screen of OMISEAI. A dish card answering a question shows the owner-verified badge and the wheat allergen" width="600" height="470" loading="lazy"><span class="vad-ring" aria-hidden="true"></span><span class="vad-tag" aria-hidden="true">This is VAD</span></div><figcaption>The real customer screen of OMISEAI (Japanese UI).<br><b>VAD</b> (Verified Authentic Data) = data the owner has checked.<br>Verified dishes carry the badge “店主確認済み” (owner verified).</figcaption></figure>
 </div></section>
 
 <section class="alt"><div class="wrap">
