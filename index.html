@@ -215,6 +215,39 @@ footer a{color:#f3efe6}
   .on-chain li{flex-wrap:wrap;gap:2px 12px}.on-chain li span{flex-basis:100%}.on-chain li em{margin-left:0}
 }
 /* ONTOLOGY:CSS:END */
+
+/* 2026-11-08 本人「各コンテンツがでかすぎて一画面に収まってない」：PCで1つの内容が1画面（高さ約800px）に収まる大きさにする */
+@media(min-width:861px){
+  section{padding:72px 0}
+  h2{font-size:clamp(1.625rem,3vw,2.25rem)}
+  .sub{margin-top:10px}
+  .hero{padding:48px 0 44px}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-areas:"k fig" "h fig" "p fig";column-gap:48px;align-items:center}
+  .hero .k{grid-area:k;align-self:end;margin-bottom:14px}
+  .hero h1{grid-area:h;font-size:clamp(2rem,3.4vw,3rem)}
+  .hero p{grid-area:p;align-self:start;margin-top:18px}
+  .hero-fig{grid-area:fig;margin:0;max-width:none}
+  .hero-fig img{max-height:440px;width:auto;max-width:100%;margin:0 auto}
+  .hq{margin-top:28px;gap:40px}
+  .hq video{max-height:500px;width:auto;max-width:100%}
+  .hq-steps li{padding-bottom:18px}
+  .hq-steps b{font-size:1.125rem}
+  .flow{margin-top:32px}
+  .flow li{padding:18px 18px}
+  .on-card{margin-top:24px}
+  .on-wide .on-fig{max-width:720px;margin:0 auto}
+  .on-wide svg{max-height:560px}
+  .on-h3{margin-top:56px}
+  .on-two{margin-top:28px}
+  .on-two>div{padding:22px 24px}
+  .on-radar{max-width:230px;margin-top:8px}
+  .on-chain{margin-top:12px}.on-chain li{padding:7px 0}
+  .on-ex{margin-top:14px}.on-ex td{padding:6px 8px}
+  .dev dl{margin-top:28px}
+  .dev ul{column-count:2;column-gap:32px}
+  .dev li{break-inside:avoid;grid-template-columns:170px minmax(0,1fr)}
+  .dev pre{max-height:380px}
+}
 </style>
 </head>
 <body>
